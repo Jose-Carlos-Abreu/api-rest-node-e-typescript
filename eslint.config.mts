@@ -15,11 +15,11 @@ export default defineConfig([
   { files: ["**/*.css"], plugins: { css }, language: "css/css", extends: ["css/recommended"] },
   {
     rules: {
-        '@typescript-eslint/no-empty-object-type': 'off',
+      '@typescript-eslint/no-empty-object-type': 'off',
 
-        indent: ['error', 4],
-        quotes: ['error', 'single'],
-        semi: ['error', 'always'],
+      indent: ['error', 2],
+      // quotes: ['error', 'single'],
+      semi: ['error', 'always'],
     }
   }
 ]);
