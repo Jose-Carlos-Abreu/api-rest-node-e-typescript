@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import { StatusCodes } from 'http-status-codes';
+
+import { CidadesController } from './../controlles';
 
 const router = Router();
 
@@ -7,10 +8,11 @@ router.get('/', (_, res) => {
   return res.send('Olá, DEV!');
 });
 
+router.get('/cidades', CidadesController.getAlleValidator, CidadesController.getAll);
+router.post('/cidades', CidadesController.createValidator, CidadesController.create);
+router.get('/cidades/:id', CidadesController.getByIdValidator, CidadesController.getById);
+router.put('/cidades/:id', CidadesController.updateByIdValidator, CidadesController.updateById);
+router.delete('/cidades/:id', CidadesController.deleteByIdValidator, CidadesController.deleteById);
 
-router.post('/teste', (req, res) => {
-  console.log(req);
-  return res.status(StatusCodes.OK).json(req.body);
-});
 
 export { router };
