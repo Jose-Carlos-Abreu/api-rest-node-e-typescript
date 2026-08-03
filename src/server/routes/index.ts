@@ -14,5 +14,4 @@ router.get('/cidades/:id', CidadesController.getByIdValidator, CidadesController
 router.put('/cidades/:id', CidadesController.updateByIdValidator, CidadesController.updateById);
 router.delete('/cidades/:id', CidadesController.deleteByIdValidator, CidadesController.deleteById);
 
-
 export { router };

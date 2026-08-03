@@ -2,5 +2,6 @@
 yarn-erro.log
 
 /build
+/coverage
 
 .env
