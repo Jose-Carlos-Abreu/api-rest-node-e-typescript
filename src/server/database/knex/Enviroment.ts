@@ -15,7 +15,7 @@ export const development: Knex.Config = {
   },
   pool: {
     afterCreate: (connection: any, done: Function) => {
-      connection.run('PRAGMA foreign_keys = OK');
+      connection.run('PRAGMA foreign_keys = ON');
       done();
     }
   }
@@ -23,7 +23,9 @@ export const development: Knex.Config = {
 
 export const test: Knex.Config = {
   ...development,
-  connection: ':memory',
+  connection: {
+    filename: ':memory:',
+  },
 };
 
 export const production: Knex.Config = {

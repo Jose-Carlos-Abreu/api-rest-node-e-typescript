@@ -8,6 +8,6 @@ const getEnviroment = () => {
 
     default: return development;
   }
-}
+};
 
-export const Knex = knex(getEnviroment);
+export const Knex = knex(getEnviroment());
