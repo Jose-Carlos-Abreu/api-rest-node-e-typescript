@@ -4,7 +4,7 @@ import * as yup from 'yup';
 import { validation } from '../../shared/middleware';
 import { StatusCodes } from 'http-status-codes';
 import { ICidade } from '../../database/models';
-import { CidadesProvider } from '../../database/providers';
+import { CidadesProvider } from '../../database/providers/cidades';
  
 interface IBodyProps extends Omit<ICidade, 'id'> {}
 
