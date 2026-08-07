@@ -8,8 +8,8 @@ import { IPessoa } from './../../database/models';
 
 interface IBodyProps extends Omit<IPessoa, 'id'> { }
 
-export const createValidation = validation(get => ({
-  body: get<IBodyProps>(yup.object().shape({
+export const createValidation = validation(getSchema => ({
+  body: getSchema<IBodyProps>(yup.object().shape({
     email: yup.string().required().email(),
     cidadeId: yup.number().integer().required(),
     nomeCompleto: yup.string().required().min(3),
