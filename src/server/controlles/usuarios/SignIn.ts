@@ -19,19 +19,18 @@ export const signIn= async (req: Request<{}, {}, IBodyProps>, res: Response) => 
   const { email, senha } = req.body;
 
   const result = await UsuariosProvider.getByEmail(email);
-
   if (result instanceof Error) {
-    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+    return res.status(StatusCodes.UNAUTHORIZED).json({
       errors: {
-        default: 'Email ou senha sáo inválidos'
+        default: 'Email ou senha são inválidos'
       }
     });
   }
 
   if (senha !== result.senha) {
-    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+    return res.status(StatusCodes.UNAUTHORIZED).json({
       errors: {
-        default: 'Email ou senha sáo inválidos'
+        default: 'Email ou senha são inválidos'
       }
     });
   } else {
